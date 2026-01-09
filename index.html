@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mini Skyline 2D</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="top-bar">
+      <div>
+        <h1>Mini Skyline 2D</h1>
+        <p>Стройте район, следите за балансом и населением.</p>
+      </div>
+      <div class="stats">
+        <div>💰 Бюджет: <span id="budget">0</span></div>
+        <div>👥 Население: <span id="population">0</span></div>
+        <div>⚡ Энергия: <span id="power">0</span></div>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="controls">
+        <h2>Инструменты</h2>
+        <button class="tool" data-tool="residential">🏠 Жилой квартал</button>
+        <button class="tool" data-tool="commercial">🏬 Коммерция</button>
+        <button class="tool" data-tool="industrial">🏭 Промзона</button>
+        <button class="tool" data-tool="park">🌳 Парк</button>
+        <button class="tool" data-tool="road">🛣️ Дорога</button>
+        <button class="tool" data-tool="power">⚡ Электростанция</button>
+        <button class="tool" data-tool="bulldoze">🧹 Снести</button>
+
+        <h2>Скорость</h2>
+        <div class="speed">
+          <button class="speed-btn" data-speed="0">⏸ Пауза</button>
+          <button class="speed-btn" data-speed="1">▶️ 1x</button>
+          <button class="speed-btn" data-speed="2">⏩ 2x</button>
+        </div>
+
+        <div class="legend">
+          <h2>Легенда</h2>
+          <ul>
+            <li><span class="swatch residential"></span> Жильё</li>
+            <li><span class="swatch commercial"></span> Коммерция</li>
+            <li><span class="swatch industrial"></span> Пром</li>
+            <li><span class="swatch park"></span> Парк</li>
+            <li><span class="swatch road"></span> Дорога</li>
+            <li><span class="swatch power"></span> Электростанция</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="game">
+        <canvas id="city" width="720" height="720"></canvas>
+        <div class="tips">
+          <p>Советы:</p>
+          <ul>
+            <li>Дороги соединяют кварталы и приносят налог.</li>
+            <li>Энергия нужна для роста населения.</li>
+            <li>Промзоны дают бюджет, но снижают счастье.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Статистика района</h2>
+        <div class="panel-grid">
+          <div>
+            <h3>Налоги</h3>
+            <p><span id="taxIncome">0</span> / цикл</p>
+          </div>
+          <div>
+            <h3>Расходы</h3>
+            <p><span id="expenses">0</span> / цикл</p>
+          </div>
+          <div>
+            <h3>Счастье</h3>
+            <p><span id="happiness">0</span>%</p>
+          </div>
+          <div>
+            <h3>Свободные клетки</h3>
+            <p><span id="freeTiles">0</span></p>
+          </div>
+        </div>
+        <div class="message" id="message"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Кликните по клетке, чтобы построить выбранный объект.</p>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>
